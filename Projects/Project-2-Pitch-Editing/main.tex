@@ -1,0 +1,75 @@
+\documentclass{tufte-handout}
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Project 2: Pitch Editing}
+\author{Dr. Viator}
+\date{January 26th, 2026}
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+In this assignment, you will learn to use Reason's pitch correction tool to analyze and edit the pitch of vocal or melodic recordings. By the end, you should be able to:
+\begin{enumerate}
+
+\item Identify out-of-tune notes and pitch drift, (2) apply corrective edits using snap, jump, and fine controls.
+
+\item Apply corrective edits using snap, jump, and fine controls.
+
+\item Reshape timing and phrasing by adjusting note boundaries and transitions.
+
+\item Make intentional creative choices (e.g., robotic tuning, exaggerated glides, or formant shifts) while preserving an appropriate level of naturalness for the style.
+\end{enumerate}
+
+You will practice both \textit{repair} (fixing pitch issues transparently) and \textit{design} (using pitch tools as a sound-shaping and arranging technique).
+
+\section{Steps}
+\begin{enumerate}
+    \item Open the demo project ‘Street Phone’.
+
+    \item Locate one of the vocal regions and click on it once. Click on the pitch edit tab at the top of the sequence editor. The Melodyne-style pitch editing window will now be displayed.
+
+    \item Notice the pitch correction tools to the left of the pitch indicator. You can correct or reset the pitch and snap, jump, or fine tune the pitches.
+
+    \item If you use jump mode to adjust individual notes, they will jump to the next pitch but with the same incremental distance as they were from their original pitch. Snap will automatically quantize the note to the grid. Fine allows you to make micro adjustments. You can enable or disable the monitor reference pitch.
+
+    \item You can use the position tool to change the start or end point of each note. You can also use the razor tool if you want to further edit the slice to create melodic variation.
+
+    \item You can use ‘drift’ to create a more robotic sound by lowering its value. It can be used in the conjunction with the Preserve amount to create more or less natural sounding changes. How drastic of a change you get is dependent on the controls and the source material.
+
+    \item The Transition tool can be used to create instantces of slow portamento type glides between notes.
+
+    \item Formant can be used to change the tonal characteristics of the sound. Lower values have an almost slow motion effect while higher values have a more chipmunk like effect.
+
+    \item You can adjust the level of individual slices with either the level control or the top line in the composite vocal track above the pitch editor.
+\end{enumerate}
+
+\end{document}

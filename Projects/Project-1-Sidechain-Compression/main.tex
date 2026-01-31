@@ -1,0 +1,64 @@
+\documentclass{tufte-handout}
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Project 1: Side-chain Compression}
+\author{Dr. Viator}
+\date{January 26th, 2026}
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+In this assignment, you will learn how sidechain compression is used in modern music production to create space and movement in a mix. Using Reason, you will set up a compressor that reacts to an external “trigger” signal—most commonly a kick drum—to automatically reduce the volume of another sound like a bass, pad, or synth.
+
+\section{Steps}
+\begin{enumerate}
+    \item Pull in an instrument instance of Kong and Monotone into the rack. This should create two new channels in the sequencer.
+    \item Pull in an instance of the MClass Compressor under "effects".
+    \item Flip to the back of the rack and plug in from the Kong's Aux Send 1 Out left and right channels into the side-chain inputs on the compressor.
+    \item Plug in the output of Monotone into the input of the compressor and plugin the output of the compressor into the into of the Monotone's Mix channel.
+    \item Flip to the front of the rack and turn up Kong's aux 1 dial to feed signal into the compressor side-chain.
+    \item You should now see the meter on the compressor trigger at the same time that Kong's kicks are triggered.
+\end{enumerate}
+
+\section{Compression}
+A compressor automatically reduces the volume of a signal once it gets too loud, helping control dynamics and make sounds sit better in a mix.
+
+\begin{enumerate}
+\item Input: The level going into the compressor. Higher input means the signal hits the compressor harder and triggers more gain reduction.
+\item Threshold: The level where compression begins. When the input rises above this point, the compressor starts turning the signal down.
+\item Ratio: How strongly the compressor reduces volume after the threshold. For example, a 4:1 ratio means that for every 4 dB above the threshold, only 1 dB comes out.
+\item Attack: How quickly the compressor reacts once the signal passes the threshold. Fast attack clamps down immediately; slower attack lets the initial hit through.
+\item Release: How quickly the compressor stops compressing after the signal falls back below the threshold. Fast release returns to normal quickly; slow release smooths things out.
+\item Output (Makeup Gain): The final volume after compression. Since compression reduces peaks, output gain is used to bring the overall level back up.
+\end{enumerate}
+
+\end{document}
